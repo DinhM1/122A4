@@ -11,7 +11,6 @@ class Board(QGridLayout):
         for i in range(rows):
             for j in range(cols):
                 button = Tile("cyan")
-                print(str(i) + str(j))
                 button.clicked.connect(self.clicked)
                 self.addWidget(button, i, j)
 
@@ -22,6 +21,8 @@ class Board(QGridLayout):
         return self.cols
 
     def clicked(self):
-        # print(str(i) + str(j))
         button = self.sender()
-        button.set("red")
+        if button.get() == "cyan":
+            button.set("red")
+        else:
+            button.set("cyan")
