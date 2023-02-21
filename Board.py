@@ -3,7 +3,7 @@ from Tile import Tile
 
 
 class Board(QGridLayout):
-    def __init__(self, rows=2, cols=2):
+    def __init__(self, rows=5, cols=5):
         super().__init__()
         self.rows = rows
         self.cols = cols
@@ -21,8 +21,7 @@ class Board(QGridLayout):
     def get_cols(self):
         return self.cols
 
-    @staticmethod
     def clicked(self):
         # print(str(i) + str(j))
         button = self.sender()
-        print(button.text())
+        button.set("red")
